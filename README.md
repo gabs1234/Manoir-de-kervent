@@ -1,6 +1,7 @@
 # Manoir-de-kervent
+
 Source code of our bed and breakfasts' website, nothing crazy, simple and elegant
------------------------------------------------------------------------------
+
 
 TODO:
 * Finish reservation page
