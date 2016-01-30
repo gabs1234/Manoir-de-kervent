@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Manoir de kervent</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.slides.min.js"></script>
+		<script>
+		$(function(){
+			$("#slidesPhotos").slidesjs({
+				width: 940,
+				height: 528
+			});
+		});
+		$(function(){
+			$(".chambrePhotos").slidesjs({
+				width: 940,
+				height: 528
+			});
+		});
+
+  		</script>
+	</head>
+	<body>
+
+	<header>
+		<div id="title-container">
+			<img src="title.svg">
+		</div>
+		<div id="logo-container">
+			<img src="kervent.png">
+		</div>
+	</header>
+	<div id="fakeNav">
+	</div>
+	<nav>
+		<ul>
+			<li><a href="#title-container">Accueil</a></li>
+			<li><a href="#info">Informations</a></li>
+			<li><a href="#photos">Photos</a></li>
+			<li><a href="#chambres">Chambres</a></li>
+			<li><a href="#reserver">Réserver</a></li>
+			<li><a href="#autour">Autour</a></li>
+		</ul>
+	</nav>
+	<div class="container" id="info">
+		<h1>Bienvenu</h1>
+		<article>
+			<p>Au calme de la campagne.....proche de la plage et de la ville de Douarnenez, La famille Lefloch est heureuse de vous accueillir les bras ouverts dans son manoir familial. Parc fleuri, allee pour se promener ? pied, d'o? vous aurez une superbe vue sur la baie. Le petit d?jeuner copieux avec des sp?cialit?s bretonnes est servi dans la salle ? manger spacieuse et toujours fleurie.</p>
+		</article>
+		<div class="info-bubbles">
+			<div class="bubble">
+				<img src='img/frame.svg' alt="normal picture frame" class="normalFrame">
+			</div>
+			<div class="bubble">
+				<img src='img/bigFrame.svg' alt="large picture frame" class="bigFrame">
+			</div>
+			<div class="bubble">
+				<img src='img/frame.svg' alt="normal picture frame" class="normalFrame">
+			</div>
+		</div>
+	</div>
+	<div class="container" id="photos">
+		<h1>Photos</h1>
+		<div id='slidesPhotos'>
+			<img src="http://placehold.it/940x528">
+			<img src="http://placehold.it/940x528">
+			<img src="http://placehold.it/940x528">
+			<img src="http://placehold.it/940x528">
+			<img src="http://placehold.it/940x528">
+		</div>
+	</div>
+	<div class="container" id="chambres">
+		<h1>Nos chambres</h1>
+		<div class="chambres fleur">
+			<img class="roomLogo"alt="fleure" src="img/rose.svg">
+			<div class='chambrePhotos'>
+				<img src="http://placehold.it/940x528">
+				<img src="http://placehold.it/940x528">
+			</div>
+		</div>
+		<div class="chambres verte">
+			<img class="roomLogo" alt="fleure" src="img/feuille.svg">
+			<div class='chambrePhotos'>
+				<img src="http://placehold.it/940x528">
+				<img src="http://placehold.it/940x528">
+			</div>
+		</div>
+		<div class="chambres rose">
+			<img class="roomLogo" alt="fleure" src="img/rose.svg">
+			<div class='chambrePhotos'>
+				<img src="http://placehold.it/940x528">
+				<img src="http://placehold.it/940x528">
+			</div>
+		</div>
+		<div class="chambres jaune">
+			<img class="roomLogo" alt="fleure" src="img/rose.svg">
+			<div class='chambrePhotos'>
+				<img src="http://placehold.it/940x528">
+				<img src="http://placehold.it/940x528">
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="reserver">
+		<h1>Réserver</h1>
+		<h3>Famille Lefloch</h3>
+		<h3>6 chemin de kervent</h3>
+		<h3>29100, Douarnenez</h3>
+		<h3>Tel fixe : 02 98 92 04 90</h3>
+		<h3>Tel portable : 06 98 90 74 16</h3>
+
+		<div class="inputGroup">
+			<label>Name</label>
+			<input type="text" required />
+			<span class="inputBar"></span>
+		</div>
+		<div class="inputGroup">
+			<label>Email</label>
+			<input type="email" required />
+			<span class="inputBar"></span>
+		</div>
+		<div class="inputGroup">
+			<label>Message</label>
+			<input type="text" required />
+			<span class="inputBar"></span>
+		</div>
+	</div>
+
+	<div class="container" id="autour">
+
+	</div>
+	<footer>
+		<script src="js/stickyHeader.js"></script>
+	</footer>
+	</body>
+</html>

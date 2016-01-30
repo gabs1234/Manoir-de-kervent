@@ -1,0 +1,265 @@
+@import 'options';
+@import 'mixins';
+@import 'hacks';
+
+@import "underline";
+
+@mixin prefix($property, $value) {
+  $vendors: (webkit moz ms o);
+  @each $vendor in $vendors {
+    #{"-" + $vendor + "-" + $property}: #{$value};
+  }
+  #{$property}: #{$value};
+}
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	@include prefix(transform, translateY(-50%));
+}
+
+@import url(http://fonts.googleapis.com/css?family=Cinzel);
+@import url(http://fonts.googleapis.com/css?family=Forum);
+
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: 'Cinzel', serif;
+	font-size: 100%;
+	overflow-x: hidden;
+	background: url(../img/paper.png) repeat;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	li {
+		display: inline;
+	}
+}
+a {
+	text-decoration: none;
+}
+hr {
+	display: block;
+	height: 2px;
+	width: 5vw;
+	border: 0;
+	border-top: 2px solid darken(#554, 8%);
+	margin: 1em auto 1em auto;
+	padding: 0;
+}
+h1 {
+	font-family: 'Forum', sans-serif;
+	font-size: 4em;
+	font-weight: normal;
+	color: darken(#554, 7%);
+	position: relative;
+	width: 100%;
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+}
+header {
+	width: 100vw;
+	height: 90vh;
+	position: relative;
+	background: url(../img/paper.png) repeat;
+	#title-container {
+		width: 100%;
+		height: 40%;
+		position: relative;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		@include prefix(flex-align, center);
+		align-items: center;
+		img {
+			 max-width: 100%;
+			 max-height: 100%;
+			 margin: auto;
+		}
+	}
+	#logo-container {
+		@extend #title-container;
+		height: 60%;
+	}
+}
+nav {
+	width: 100vw;
+	height: 10vh;
+	background: url(../img/paper.png) repeat;
+	position: relative;
+	z-index: 20;
+	ul {
+		width: 70vw;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: center;
+		@include vertical-align;
+		@media screen and (min-width: 600px) {
+			flex-direction: row;
+		}
+		li {
+			width: 100%;
+			height: 5vh;
+			a {
+				@include underline-from-center;
+				color: black;
+				height: 100%;
+				line-height: 5vh;
+				font-size: 1.17em;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.clearfix {
+	position: relative;
+	width: 100vw;
+	height: 10vh;
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	-webkit-box-shadow: 0px 10px 99px -18px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 99px -18px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 99px -18px rgba(0,0,0,0.75);
+	transition: all .3s ease-in-out;
+}
+.container {
+	background: url(../img/paper.png) repeat;
+	width: 60vw;
+	height: 90vh;
+	margin: auto;
+	position: relative;
+}
+
+#info {
+	height: 80vh;
+	height: auto;
+	article {
+		margin: 1em 1em 1em 1em;
+		p {
+			font-family: 'Forum', sans-serif;
+			font-size: 1.5em;
+			text-align: center;
+		}
+	}
+	.info-bubbles {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		.bubble {
+			width: 30%;
+			height: 57%;
+			.normalFrame {
+				position: relative;
+				height: auto;
+				max-width: 90%;
+				left: 5%;
+			}
+			.bigFrame {
+				position: relative;
+				height: auto;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+#photos {
+	height: auto;
+	#slidesPhotos {
+		display: none;
+		position: relative;
+		.slidesjs-previous {
+			float: left;
+		}
+		.slidesjs-next {
+			float: right;
+		}
+		.slidesjs-navigation {
+			width: 50%;
+			height: 2em;
+			line-height: 2em;
+			text-align: center;
+			background-color: #554e44;
+			color: white;
+		}
+		.slidesjs-pagination-item {
+			display: none;
+		}
+	}
+}
+#chambres {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: auto;
+	.chambres {
+
+		width: 100%;
+		height: 40vh;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		.roomLogo {
+			max-width: 30%;
+			max-height: 60%;
+		}
+		.chambrePhotos {
+			display: none;
+			width: 50%;
+			height: auto;
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				height: auto;
+			}
+		}
+		.slidesjs-previous {
+			float: left;
+		}
+		.slidesjs-next {
+			float: right;
+		}
+		.slidesjs-navigation {
+			width: 50%;
+			text-align: center;
+			background-color: #554e44;
+			color: white;
+		}
+		.slidesjs-pagination-item {
+			display: none;
+		}
+	}
+	.fleur {
+	}
+	.verte {
+	}
+	.rose {
+	}
+	.jaune {
+	}
+}
+#reserver {
+	input {
+		width: 100%;
+		height: 2em;
+	}
+}
+
+#autour {
+}

@@ -1,0 +1,241 @@
+/* Underline From Center */
+@import url(http://fonts.googleapis.com/css?family=Cinzel);
+@import url(http://fonts.googleapis.com/css?family=Forum);
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: 'Cinzel', serif;
+  font-size: 100%;
+  overflow-x: hidden;
+  background: url(../img/paper.png) repeat; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  ul li {
+    display: inline; }
+
+a {
+  text-decoration: none; }
+
+hr {
+  display: block;
+  height: 2px;
+  width: 5vw;
+  border: 0;
+  border-top: 2px solid #3e3e32;
+  margin: 1em auto 1em auto;
+  padding: 0; }
+
+h1 {
+  font-family: 'Forum', sans-serif;
+  font-size: 4em;
+  font-weight: normal;
+  color: #414134;
+  position: relative;
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  text-align: center; }
+
+header {
+  width: 100vw;
+  height: 90vh;
+  position: relative;
+  background: url(../img/paper.png) repeat; }
+  header #title-container, header #logo-container {
+    width: 100%;
+    height: 40%;
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -moz-flex-align: center;
+    -ms-flex-align: center;
+    -o-flex-align: center;
+    flex-align: center;
+    align-items: center; }
+    header #title-container img, header #logo-container img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto; }
+  header #logo-container {
+    height: 60%; }
+
+nav {
+  width: 100vw;
+  height: 10vh;
+  background: url(../img/paper.png) repeat;
+  position: relative;
+  z-index: 20; }
+  nav ul {
+    width: 70vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    @media screen and (min-width: 600px) {
+      nav ul {
+        flex-direction: row; } }
+    nav ul li {
+      width: 100%;
+      height: 5vh; }
+      nav ul li a {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        overflow: hidden;
+        color: black;
+        height: 100%;
+        line-height: 5vh;
+        font-size: 1.17em;
+        cursor: pointer; }
+        nav ul li a:before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          left: 50%;
+          right: 50%;
+          bottom: 0;
+          background: #554e44;
+          height: 2px;
+          -webkit-transition-property: left, right;
+          transition-property: left, right;
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out; }
+        nav ul li a:hover:before, nav ul li a:focus:before, nav ul li a:active:before {
+          left: 0;
+          right: 0; }
+
+.clearfix {
+  position: relative;
+  width: 100vw;
+  height: 10vh; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: 0px 10px 99px -18px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 99px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 99px -18px rgba(0, 0, 0, 0.75);
+  transition: all .3s ease-in-out; }
+
+.container {
+  background: url(../img/paper.png) repeat;
+  width: 60vw;
+  height: 90vh;
+  margin: auto;
+  position: relative; }
+
+#info {
+  height: 80vh;
+  height: auto; }
+  #info article {
+    margin: 1em 1em 1em 1em; }
+    #info article p {
+      font-family: 'Forum', sans-serif;
+      font-size: 1.5em;
+      text-align: center; }
+  #info .info-bubbles {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; }
+    #info .info-bubbles .bubble {
+      width: 30%;
+      height: 57%; }
+      #info .info-bubbles .bubble .normalFrame {
+        position: relative;
+        height: auto;
+        max-width: 90%;
+        left: 5%; }
+      #info .info-bubbles .bubble .bigFrame {
+        position: relative;
+        height: auto;
+        max-width: 100%; }
+
+#photos {
+  height: auto; }
+  #photos #slidesPhotos {
+    display: none;
+    position: relative; }
+    #photos #slidesPhotos .slidesjs-previous {
+      float: left; }
+    #photos #slidesPhotos .slidesjs-next {
+      float: right; }
+    #photos #slidesPhotos .slidesjs-navigation {
+      width: 50%;
+      height: 2em;
+      line-height: 2em;
+      text-align: center;
+      background-color: #554e44;
+      color: white; }
+    #photos #slidesPhotos .slidesjs-pagination-item {
+      display: none; }
+
+#chambres {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto; }
+  #chambres .chambres {
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    #chambres .chambres .roomLogo {
+      max-width: 30%;
+      max-height: 60%; }
+    #chambres .chambres .chambrePhotos {
+      display: none;
+      width: 50%;
+      height: auto; }
+      #chambres .chambres .chambrePhotos img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto; }
+    #chambres .chambres .slidesjs-previous {
+      float: left; }
+    #chambres .chambres .slidesjs-next {
+      float: right; }
+    #chambres .chambres .slidesjs-navigation {
+      width: 50%;
+      text-align: center;
+      background-color: #554e44;
+      color: white; }
+    #chambres .chambres .slidesjs-pagination-item {
+      display: none; }
+
+#reserver input {
+  width: 100%;
+  height: 2em; }
+
+/*# sourceMappingURL=style.css.map */
